@@ -55,9 +55,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="web">Home</a></li>
-        <li><a href="web">About</a></li>
-         <li><a href="v_blog">Blog</a></li>
+        <li><a href="../../web">Home</a></li>
+        <li><a href="../../web">About</a></li>
+         <li class="active"><a href="../../v_blog">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -66,30 +66,30 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Test CodeIgniter dan Bootstrap</h1>
-      <p>Contoh web sederhana untuk tugas CI dan Booststrap</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
-  </div>
-</div>
+      <?php foreach ($detail as $key): ?>
+          <table>
+          <tr class="text-center">
+            <td>
+              <h3><b><?php echo $key->judul_blog; ?></b><h3>
+              </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <img src="../../gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500" >
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              Diupload tanggal : <?php echo $key->tanggal_blog; ?><br><br>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-justify">
+              <?php echo $key->konten; ?>
+            </td>
+          </tr>
+        </table>
+         <?php endforeach ?>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>

@@ -55,9 +55,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="web">Home</a></li>
+        <li><a href="web">Home</a></li>
         <li><a href="web">About</a></li>
-         <li><a href="v_blog">Blog</a></li>
+         <li class="active"><a href="v_blog">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -66,30 +66,22 @@
   </div>
 </nav>
   
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Test CodeIgniter dan Bootstrap</h1>
-      <p>Contoh web sederhana untuk tugas CI dan Booststrap</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
-  </div>
-</div>
+      <?php foreach ($artikel as $key): ?>
+
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <h3><?php echo $key->judul_blog ?></h3>
+              <br>
+              <img src="gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500">
+              <p>
+                diupload tanggal : <?php echo $key->tanggal_blog ?><br>
+                <a href="<?php echo site_url()?>V_blog/detail/<?php echo $key->id_blog ?>">Read More ...</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <?php endforeach ?>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
